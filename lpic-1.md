@@ -1,3 +1,5 @@
+===
+
 Em um sistema que utilza BIOS qual é a ordem de boot?
 
 ---
@@ -62,11 +64,11 @@ lsusb -s bus:device -v
 
 ===
 
-Quais diretorios não podem estar em uma partição diferente do /?
+Qual comando e parametro exibe continuamente o final de um arquivo conforme novos conteúdos são acrescentados a ele?
 
 ---
 
-
+tail -f
 
 ===
 
@@ -110,7 +112,7 @@ Qual é o arquivo que que mostra os  mostra o status dos filesystems montados?
 
 ===
 
-Qual é o tipo de filesystem que é usado para gerar algo dinamicamente?
+qual é o tipo de filesystem que é usado para gerar algo dinamicamente?
 
 ---
 
@@ -123,14 +125,6 @@ Qual é o sinal responsavél pelo deligamento do sistema linux?
 ---
 
 acpid
-
-===
-
-Se eu apontar um hard link para um arquivo em outra partição, qual será o resultado?
-
----
-
-Vazia
 
 ===
 
@@ -170,7 +164,7 @@ Qual comando é passado para remover modulos carregados?
 
 ===
 
-Em qual diretorio fica as regras que bloqueia o carregamento dos modulos de sistema?
+Em qual diretorio fica as regras que bloqueiam o carregamento dos modulos de sistema?
 
 ---
 
@@ -178,11 +172,11 @@ Em qual diretorio fica as regras que bloqueia o carregamento dos modulos de sist
 
 ===
 
-Qual é a ordem do processo de boot na bios?
+Qual comando carrega um módulo do kernel e automaticamente carrega demais módulos que sejam necessários para seu funcionamento?
 
 ---
 
-
+modprobe
 
 ===
 
@@ -194,15 +188,15 @@ Em qual lugar fica as configurações de runlevel padrão em um sistema init?
 
 ===
 
-Em um sistema sysV  qual é o runlevel de single user?
+Em um sistema sysV, qual é o runlevel de single user?
 
 ---
 
-
+runlevel 1
 
 ===
 
-Quais comandos eu uso para alterar o runlevel de uma máquina que usa um sistema sisV?
+Quais comandos são utilizados para alterar o runlevel de uma máquina que usa um sistema sisV?
 
 ---
 
@@ -260,7 +254,7 @@ Cite três formas de reiniciar um sistema linux:
 
 ===
 
-Qual comando me permite mandar uma mensagem para todos os usuarios logados no sistema?
+Qual comando permite mandar uma mensagem para todos os usuarios logados no sistema?
 
 ---
 
@@ -268,13 +262,6 @@ wall
 
 ===
 
-Em um sistema que utiliza bios, qual local do disco fica gravado as informações do Boot loader (grub)?
-
----
-
-nos primeiros 446 bytes do disco
-
-===
 
 Quais comandos podem ser utilizados para ver o processo de boot?
 
@@ -285,7 +272,7 @@ Quais comandos podem ser utilizados para ver o processo de boot?
 
 ===
 
-Em uma máquina que utliza BIOS qual é o estágio de boot responsável por carregar o bootloader (grub)?
+Em uma máquina que utliza BIOS, qual é o estágio de boot responsável por carregar o bootloader (grub)?
 
 ---
 
@@ -309,14 +296,6 @@ uname -r
 
 ===
 
-Quais comandos podem ser utilizados para atualizar o arquivo de configuração utilizado durante o processo de boot pelo GRUB 2?
-
----
-
-
-
-===
-
 Em qual diretório é por padrão montada a partição ESP (EFI System Partition)?
 
 ---
@@ -335,13 +314,7 @@ Ao executar o comando `nice -10 service`, qual atributo e valor é definido ao p
 
 Um sistema que possui as seguintes partições:
 
-```
-/dev/sda1
-/dev/sda2
-/dev/sda3
-/dev/sda5
-/dev/sda6
-```
+![](/home/renato/Projects/lpic-1-anki-flashcards-pt-br/images/partitions.png)
 
 Quantas partições são do tipo lógica?
 Existe alguma partição do tipo extendida?
@@ -364,7 +337,7 @@ Qual variável de ambiente contém o nome do arquivo utilizado para armazenar os
 
 ---
 
-
+nash_histo
 
 ===
 
@@ -422,5 +395,355 @@ Em um sistema que utiliza UEFI one fica a partição ESP?
 ---
 
 
+
+===
+
+Considere o seguinte texto exibido num terminal:
+
+![](images/lsusb.png)
+
+Qual comando produz uma saída como essa?
+
+---
+
+lsusb
+
+===
+
+Considere o seguinte texto exibido num terminal:
+
+![](images/lspci.png)
+
+Qual das alternativas a seguir produz uma saída como essa?
+
+- A - Executar o comando lspci VGA*
+- B - Exibir o conteúdo do arquivo /proc/pci/01.00.0
+- C - Executar o comando lspci -s 01:00.0
+- D - Executar o comando lspci -v 01:00.0
+- E - Exibir o conteúdo do arquivo /sys/bus/pci/01:00.0
+
+---
+
+C
+
+===
+
+Qual é o comando usado para verificar o nível de execução atual em um sistema que utiliza o SysVinit?
+
+---
+
+runlevel
+
+===
+
+Qual dos comandos a seguir pode ser utilizado para listar as partições do dispositivo /dev/sda?
+
+- A - cat /proc/partitions/sda
+- B - fdisk -p /dev/sda
+- C - ls /dev/sda
+- D - fdisk -l /dev/sda
+- E - cat /dev/sda
+
+---
+
+D
+
+===
+
+Qual é o código hexadecimal que identifica uma partição Linux Swap em um disco particionado no padrão MBR?
+
+---
+
+82
+
+===
+
+Qual é o comando utilizado para exibir as bibliotecas compartilhadas que um programa necessita? (sem opções ou parâmetros.)
+
+---
+
+ldd
+
+===
+
+Um novo repositório de software foi incluído num sistema que utiliza o gerenciador de pacotes do Debian.
+Qual das alternativas a seguir deve ser realizada para que os pacotes desse repositório estejam disponíveis para instalação no sistema local?
+
+- A - Executar o comando apt-get dist-upgrade
+- B - Executar o comando apt-get upgrade
+- C - Executar o comando apt-get repo-update
+- D - Executar o comando apt-get update
+- E - Executar o comando apt-get refresh
+
+---
+
+D
+
+===
+
+Qual é a opção do comando dpkg que mostra qual pacote instalou um arquivo indicado?
+
+- A - -S
+- B - --contents
+- C - --search
+- D - -L
+- E - --file
+
+---
+
+A
+
+===
+
+Quais das alternativas a seguir são diretórios na partição raiz que podem ser pontos de montagem para partições em outros dispositivos? (Escolha três respostas corretas.)
+
+- A - /sbin
+- B - /opt
+- C - /home
+- D - /etc
+- E - /var
+
+---
+
+B, C, E
+
+===
+
+Quais das alternativas a seguir são informações corretas a respeito do KVM? (Escolha duas respostas corretas.)
+
+- A - Diferente do LXC, no KVM o kernel do hospedeiro não controla os processos do convidado.
+- B - Como o D-BUS, O KVM é um sistema de comunicação entre processos (IPC).
+- C - O KVM simula um ambiente de hardware para executar um sistema virtualizado
+- D - O KVM permite escolher qual sistema operacional será carregado assim que a máquina é ligada.
+- E - O KVM é um sistema de acesso remoto, como o VNC.
+
+---
+
+A, B
+
+===
+
+Quais das alternativas a seguir são comandos que podem ser utilizados para instalar novos programas num sistema que utiliza o gerenciamento de pacotes Red Hat? (Escolha três respostas corretas.)
+
+- A - dnf
+- B - yum
+- C - dpkg
+- D - zypper
+- E - apt-get
+
+---
+
+A, B, D
+
+===
+
+Um usuário com acesso de root deseja reiniciar o sistema após uma atualização bem sucedida realizada com o comando apt-get dist-upgrade -y.
+Qual das alternativas a seguir cumpre adequadamente essa tarefa?
+
+
+- A - Executar o comando apt-get dist-upgrade -y && systemctl reboot
+- B - Executar o comando apt-get dist-upgrade -y || systemctl reboot
+- C - Executar o comando apt-get dist-upgrade -y ; systemctl reboot
+- D - Executar o comando apt-get dist-upgrade -y & systemctl reboot
+- E - Executar o comando if [ `apt-get dist-upgrade -y` -eq 0 ]; then systemctl reboot; fi
+
+---
+
+A
+
+===
+
+Qual é o comando que redireciona o conteúdo recebido na entrada padrão para a saída padrão e ao mesmo tempo salva o conteúdo num arquivo indicado? (Escreva somente o comando, sem opções ou parâmetros.)
+
+---
+
+tee
+
+===
+
+Qual é a opção do comando `tar` que indica a utilização da compactação com bzip2?
+
+
+- A - -j
+- B - -J
+- C - -Z
+- D - -bz
+- E - -z
+
+---
+
+A
+
+===
+
+Qual das alternativas a seguir descreve a finalidade do comando paste?
+
+- A - Juntar dois ou mais arquivos
+- B - Exibir o conteúdo de dois arquivos lado a lado
+- C - Enviar um texto para outro usuário
+- D - Exibir o histórico de comandos
+- E - Colar o conteúdo da área de transferência
+
+---
+
+B
+
+===
+
+Qual das alternativas a seguir descreve a finalidade do comando tac?
+
+
+- A - Exibir o conteúdo de um arquivo
+- B - Enviar um texto para outro usuário
+- C - Exibir o conteúdo de um arquivo sem tabulações
+- D - Receber um arquivo via rede
+- E - Exibir o conteúdo de um arquivo na ordem inversa
+
+
+---
+
+E
+
+===
+
+Quais das alternativas a seguir são comandos que podem alterar a prioridade de um processo em execução? (Escolha duas respostas corretas.)
+
+- A - ps
+- B - ulimit
+- C - nice
+- D - renice
+- E - top
+
+---
+
+
+
+===
+
+Um usuário do sistema verificou que alguns dos links simbólicos em seu diretório pessoal deixaram de funcionar.
+Qual das alternativas a seguir foi uma possível causa desse problema?
+
+- A - O nome do link simbólico foi alterado.
+- B - O link simbólico foi criado tendo um diretório como alvo.
+- C - O link simbólico foi criado com um alvo que está num sistema de arquivos diferente.
+- D - O alvo do link simbólico foi movido para outra localização.
+- E - O conteúdo do alvo do link simbólico foi alterado.
+
+---
+
+D
+
+===
+
+Considere o seguinte texto exibido num terminal:
+
+![](images/bash.png)
+
+Qual das alternativas a seguir produz uma saída como essa?
+
+
+- A - Executar o comando type bash
+- B - Executar o comando whatis bash
+- C - Executar o comando file /usr/bin/bash
+- D - Executar o comando ls -i /usr/bin/bash
+- E - Executar o comando which bash
+
+---
+
+A
+
+===
+
+Qual é o comando que converte um sistema de arquivos ext2 em /dev/sdx1 para ext3 sem perda de dados? (comando completo, incluindo as opções e parâmetros.)
+
+---
+
+
+
+===
+
+Qual é o comando que ativa uma área de memória swap em um dispositivo já formatado para esse fim? (comando, sem opções ou parâmetros.)
+
+---
+
+swapon
+
+===
+
+Qual é o comando interno do fdisk que cria uma nova partição no disco atual?
+
+- A - n
+- B - c
+- C - a
+- D - p
+- E - w
+
+---
+
+A
+
+===
+
+Qual será a permissão padrão que será utilizada para novos arquivos caso o valor da máscara umask esteja definido em 0002?
+
+- A - u=rwx,g=rwx,o=r
+- B - u=r,g=r,o=r
+- C - u=rwx,g=rwx,o=rx
+- D - u=rw,g=r,o=r
+- E - u=rw,g=rw,o=r
+
+---
+
+E
+
+===
+
+Qual das alternativas a seguir descreve o propósito do terceiro campo em uma linha do arquivo /etc/fstab?
+
+
+- A - Indicar as opções de checagem do sistema de arquivos.
+- B - Indicar as opções de montagem.
+- C - Indicar o sistema de arquivos da partição.
+- D - Indicar a prioridade de montagem.
+- E - Indicar o ponto de montagem.
+
+---
+
+C
+
+===
+
+Qual das alternativas a seguir descreve a finalidade do comando chgrp?
+
+
+- A - Alterar as propriedades de um grupo de usuários.
+- B - Alterar o nome de um grupo de usuários.
+- C - Alterar o grupo dono de um arquivo ou diretório.
+- D - Alterar o shell padrão para um grupo de usuários.
+- E - Alterar o grupo do usuário atual.
+
+---
+
+C
+
+===
+
+Quais das alternativas a seguir são comandos que verificam a integridade de sistemas de arquivos no Linux ? (Escolha três respostas corretas.)
+
+- A - fsck
+- B - fsck.msdos
+- C - e2fsck
+- D - fdisk
+- E - scandisk
+
+---
+
+A, B. C
+
+Em um sistema que utiliza bios, qual local do disco fica gravado as informações do Boot loader (grub)?
+
+---
+
+nos primeiros 446 bytes do disco
 
 ===
