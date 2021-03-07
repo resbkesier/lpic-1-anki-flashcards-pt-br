@@ -16,7 +16,7 @@ A ideia desse repositorio é manter atualizado flashcards que auxiliem nos estud
 Propriedade | Valor
 ------------ | -------------
 Linguagem | PT-BR
-Numero de cards | 75
+Numero de cards | 100
 
 
 
